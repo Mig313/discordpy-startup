@@ -15,12 +15,6 @@ async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
 
-channel = client.get_channel(payload.channel_id)
-async def grant_role(payload):
-   member = channel.guild.get_member(payload.user_id)
-   role = guild.get_role(722022742123348020)
-   await member.add_roles(role)
-   return member
 
 @client.event
 async def on_message(message):
@@ -33,7 +27,9 @@ async def on_message(message):
     if message.content == '/yaju':
         await message.channel.send('ｲｷｽｷﾞｨ!!ｲｸｯｲｸｯ...ﾍｯﾍｯﾍｯ...ﾝｱｰｯ!!')
     if message.content == "/op":
-        member = grant_role(payload)
+        member = message.autho
+        role = member.guild.get_role(722022742123348020)
+        await member.add_roles(role)
         #role = guild.get_role(722022742123348020)
 
 # Botの起動とDiscordサーバーへの接続
