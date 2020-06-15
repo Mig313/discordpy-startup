@@ -1,5 +1,7 @@
 # インストールした discord.py を読み込む
 import discord
+import os
+import asyncio
 
 # 自分のBotのアクセストークンに置き換えてください
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
