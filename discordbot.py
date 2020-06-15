@@ -26,9 +26,10 @@ async def on_message(message):
         await message.channel.send('にゃーん')
     if message.content == '/yaju':
         await message.channel.send('ｲｷｽｷﾞｨ!!ｲｸｯｲｸｯ...ﾍｯﾍｯﾍｯ...ﾝｱｰｯ!!')
-    if message.content == "おっｐ":
-        oppageta_role = discord.utils.get(message.guild.roles, id=722022742123348020) #おっぱげた
-        await message.author.add_roles(oppageta_role)
+    if message.content == "/op":
+ #       oppageta_role = discord.utils.get(message.guild.roles, id=722022742123348020) #おっぱげた
+        await message.author.add_roles(722022742123348020)
+        await message.channel.send('やっほー')
 async def 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
