@@ -29,6 +29,6 @@ async def on_message(message):
     if message.content == "/op":
  #       oppageta_role = discord.utils.get(message.guild.roles, id=722022742123348020) #おっぱげた
         await message.author.add_roles(722022742123348020)
-async def 
+
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
