@@ -36,7 +36,7 @@ async def on_message(message):
 
 @client.event
 async def on_message_delate(msg):
-    await msg.channel.send('メッセージ復元システム:{}'.format(msg))
+    await msg.channel.send('ちょｗｗおまｗｗメッセージ消しやがったなｗｗ')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
