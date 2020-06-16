@@ -43,8 +43,8 @@ async def on_typing(channel,user,when):
     await channel.send('{}さんが喋ろうとしている...!'.format(usersan))
 
 @client.event
-async def on_message_delate(messages):
-    await messages.channel.send('消え失せろ！')
+async def on_message_delate(message):
+    await message.channel.send(message(Message))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
