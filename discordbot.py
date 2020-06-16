@@ -35,8 +35,9 @@ async def on_message(message):
         await message.author.add_roles(role1)
 
 @client.event
-async def on_message_delate(msg):
-    await msg.channel.send('ちょｗｗおまｗｗメッセージ消しやがったなｗｗ')
+async def on_message_delate(message):
+    if 1 == 1:
+        await message.channel.send('ちょｗｗおまｗｗメッセージ消しやがったなｗｗ')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
