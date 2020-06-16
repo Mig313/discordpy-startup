@@ -36,6 +36,9 @@ async def on_message(message):
         await message.channel.send('おっぱげた...')
         role1 = discord.utils.get(message.guild.roles, id=722022742123348020)
         await message.author.add_roles(role1)
+     
+    if message.content == '/help':
+        await message.chcannel.send('やぁ！私はお兄ちゃん達をサポートするcuteな女の子だよ！\n私はお兄ちゃんのこと、いつも見てるから発言には気をつけてね！\n編集や削除で無効化しても無駄だよ♡\nじゃぁ、お仕事頑張ってね！！')
     
 @client.event
 async def on_message_delete(message):
@@ -48,7 +51,7 @@ async def  on_message_edit(before,after):
     befmsg = before.content
     aftmsg = after.content
     sender = after.author.display_name
-    await after.channel.send('私知ってます！！{}さんはほんとは{}って言ってました！！'.format(sender,befmsg))
+    await after.channel.send('私知ってます！！{}さんは編集前、{}って言ってました！！'.format(sender,befmsg))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
