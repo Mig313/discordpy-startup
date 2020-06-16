@@ -44,7 +44,9 @@ async def on_typing(channel,user,when):
 
 @client.event
 async def on_message_delete(message):
-    await message.channel.send('test')
+    msg = message.content
+    sender = message.author.display_name
+    await message.channel.send('私知ってます！！{}さんが{}って言ってました！！'.format(msg,sender))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
