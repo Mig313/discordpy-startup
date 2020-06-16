@@ -39,7 +39,8 @@ async def on_message(message):
     
 @client.event
 async def on_typing(channel,user,when):
-    await channel.send('{}が喋ろうとしている...!!'.format(user))
+    ch = get_channel(channel)
+    await ch.send('Yo!')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
