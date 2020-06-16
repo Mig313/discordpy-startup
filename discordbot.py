@@ -26,6 +26,10 @@ async def on_message(message):
     if client.user in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行 
 
+    if message.content == '/debug':
+        await message.channel.send('---デバッグデータ---')
+        await message.channel.send(cached_messages)
+
     if message.content == '/hi':
         await message.channel.send('Hi!')
 
