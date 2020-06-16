@@ -38,15 +38,17 @@ async def on_message(message):
         await message.author.add_roles(role1)
     
 @client.event
-async def on_typing(channel,user,when):
-    usersan = user.display_name
-    await channel.send('{}さんが喋ろうとしている...!'.format(usersan))
-
-@client.event
 async def on_message_delete(message):
     msg = message.content
     sender = message.author.display_name
-    await message.channel.send('私知ってます！！{}さんが{}って言ってました！！'.format(sender,msg))
+    await message.channel.send('私知ってます！！{}さんが「{}」って言ってました！！'.format(sender,msg))
+
+@client.event
+async def  on_message_edit(before,after):
+    befmsg = before.content
+    aftmsg = after.content
+    sender = message.author.display_name
+    await before.channel.send('私知ってます！！{}さんはほんとは{}って言ってました！！'.format(sender,before))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
