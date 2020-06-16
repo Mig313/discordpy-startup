@@ -34,5 +34,9 @@ async def on_message(message):
         role1 = discord.utils.get(message.guild.roles, id=722022742123348020)
         await message.author.add_roles(role1)
 
+@client.event
+async def on_message_delate(msg):
+    await msg.channel.send('メッセージ復元システム:{}'.format(msg))
+
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
