@@ -24,9 +24,12 @@ async def reply(message):
 @client.event
 async def on_message(message):
     if client.user in message.mentions: # 話しかけられたかの判定
-        await reply(message) # 返信する非同期関数を実行
+        await reply(message) # 返信する非同期関数を実行 
     if message.content == '/hi':
-        await message.channel.send('やぁ。元気かい?')
+        await message.channel.send('Hi!')
+    if message.content == '/role':
+        await message.author.add_roles(722022742123348020)
+        await message.channel.send('ほい')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
