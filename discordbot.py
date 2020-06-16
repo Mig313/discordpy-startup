@@ -45,6 +45,8 @@ async def on_typing(channel,user,when):
 @client.event
 async def on_message_delate(message):
     msg = message
+    if msg =="":
+        await message.channel.send('Debug')
     await message.channel.send(msg)
 
 # Botの起動とDiscordサーバーへの接続
