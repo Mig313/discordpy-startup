@@ -39,12 +39,13 @@ async def on_message(message):
     
 @client.event
 async def on_typing(channel,user,when):
-    usersan = user.name
+    usersan = user.display_name
     await channel.send('{}さんが喋ろうとしている...!'.format(usersan))
 
 @client.event
 async def on_message_delate(message):
-    await message.channel.send(message(Message))
+    msg = message
+    await message.channel.send(msg)
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
