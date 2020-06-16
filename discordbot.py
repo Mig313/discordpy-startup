@@ -31,7 +31,7 @@ async def on_message(message):
 
     if message.content == '/role':
         await message.channel.send('DEbug!!')
-        role1 = discord.utils.get(message.guild.roles, name="Javaの旅人")
+        role1 = discord.utils.get(message.guild.roles, id=722022742123348020)
         await message.author.add_roles(role1)
 
 # Botの起動とDiscordサーバーへの接続
