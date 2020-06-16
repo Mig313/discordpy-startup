@@ -48,7 +48,7 @@ async def  on_message_edit(before,after):
     befmsg = before.content
     aftmsg = after.content
     sender = message.author.display_name
-    await before.channel.send('私知ってます！！{}さんはほんとは{}って言ってました！！'.format(sender,before))
+    await before.channel.send('私知ってます！！{}さんはほんとは{}って言ってました！！'.format(sender,befmsg))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
