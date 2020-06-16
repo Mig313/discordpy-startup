@@ -38,8 +38,8 @@ async def on_message(message):
         await message.author.add_roles(role1)
     
 @client.event
-async def on_message_delate(message):
-        await message(Message).channel.send('YO!')
+async def on_typing(channel,user,when):
+    await channel.send('{}が喋ろうとしている...!!'.format(user))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
