@@ -25,9 +25,12 @@ async def reply(message):
 async def on_message(message):
     if client.user in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行 
+
     if message.content == '/hi':
         await message.channel.send('Hi!')
+
     if message.content == '/role':
+        await message.channel.send('DEbug!!')
         role1 = discord.utils.get(message.guild.roles, name="Javaの旅人")
         await message.author.add_roles(role1)
 
