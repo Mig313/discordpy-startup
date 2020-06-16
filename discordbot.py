@@ -39,7 +39,7 @@ async def on_message(message):
     
 @client.event
 async def on_message_delate(message):
-        await message.channel.send('ちょｗｗおまｗｗメッセージ消しやがったなｗｗ')
+        await message(Message).channel.send('YO!')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
