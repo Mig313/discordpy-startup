@@ -29,8 +29,8 @@ async def on_message(message):
     if message.content == '/hi':
         await message.channel.send('Hi!')
 
-    if message.content == '/role':
-        await message.channel.send('DEbug!!')
+    if message.content == 'おっｐ':
+        await message.channel.send('おっぱげた...')
         role1 = discord.utils.get(message.guild.roles, id=722022742123348020)
         await message.author.add_roles(role1)
 
