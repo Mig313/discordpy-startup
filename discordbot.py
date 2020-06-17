@@ -49,7 +49,12 @@ async def on_message_edit(before,after):
 async def on_raw_reaction_add(payload):
     guild = client.get_guild(692774588995731530)
     channel = guild.get_channel(718096349140353034)
-    await channel.send('Debug!!!')
+    if payload.message_id == 722631419251130408: #and payload.emoji.id == "🔞":
+        role = guild.get_role(722630435707813888)
+        user = guild.get_member(payload.user_id)
+        await user.add_roles(role)
+        await channel.send('お前は変態da!')
+
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
