@@ -49,12 +49,12 @@ async def on_message_edit(before,after):
 async def on_raw_reaction_add(payload):
     guild = client.get_guild(692774588995731530)
     channel = guild.get_channel(718096349140353034)
-    if not payload.message_id == 722631419251130408 and payload.emoji.name == "underage":
+    if not payload.message_id == 722631419251130408 and payload.emoji == "🔞":
         return
     role = guild.get_role(722630435707813888)
     user = guild.get_member(payload.user_id)
     if role in user.roles:
-        await channel.send('おまわりさん！！{}は変態願望の塊です！！')
+        await channel.send('おまわりさん！！{}は変態願望の塊です！！'.format(user.display_name))
     else:
         await user.add_roles(role)
         await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
