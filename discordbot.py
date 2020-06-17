@@ -47,8 +47,9 @@ async def on_message_edit(before,after):
 
 @client.event
 async def on_raw_reaction_add(payload):
-    cha= discord.Guild.get_channel(payload.channel_id)
-    await cha.send('Debug!!!')
+    guild = client.get_guild(692774588995731530)
+    channel = guild.get_channel(718096349140353034)
+    await channel.send('Debug!!!')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
