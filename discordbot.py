@@ -15,17 +15,9 @@ async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
 
-# 返信する非同期関数を定義
-async def reply(message):
-    reply = f'{message.author.mention} 呼んだ？' # 返信メッセージの作成
-    await message.channel.send(reply) # 返信メッセージを送信
-
 # 発言時に実行されるイベントハンドラを定義
 @client.event
 async def on_message(message):
-    if client.user in message.mentions: # 話しかけられたかの判定
-        await reply(message) # 返信する非同期関数を実行 
-
     if message.content == '/debug':
         await message.channel.send('---デバッグデータ---')
 
@@ -56,15 +48,8 @@ async def  on_message_edit(before,after):
 @client.event
 async def on_raw_reaction_add(payload):
     channel_id = 718096349140353034
-    channel = discord.Guild.get_channel(channel_id)
+    channel = guild.get_channel(channel_id)
     await channel.send('Debug!!!')
-#    ch_id = 718096349140353034#送信先チャンネル
-#    roles_id_ = 722630435707813888#変態役職
-#    msg_id = 722631419251130408#つけたいメッセージ
-#   if reaction.message.id == msg_id:
-#        role = guild.get_role(roles_id)
-#        await user.add_roles(role)
-#        await channel.send('オォン?!')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
