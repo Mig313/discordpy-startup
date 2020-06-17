@@ -53,5 +53,16 @@ async def  on_message_edit(before,after):
     sender = after.author.display_name
     await after.channel.send('私知ってます！！{}さんは編集前、{}って言ってました！！'.format(sender,befmsg))
 
+@client.event
+async def on_reaction_add(reaction,user):
+    channel_to = 718096349140353034#送信先チャンネル
+    roles = 722630435707813888#変態役職
+    msg = 722631419251130408#つけたいメッセージ
+    channel = client.get_channel(channel_to)
+    if reaction.message.id == msg:
+        role = guild.get_role(roles)
+        await user.add_roles(role)
+        await channel.send('オォン?!')
+
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
