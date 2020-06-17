@@ -53,8 +53,7 @@ async def on_raw_reaction_add(payload):
         role = guild.get_role(722630435707813888)
         user = guild.get_member(payload.user_id)
         await user.add_roles(role)
-        await channel.send('お前は変態da!')
-
+        await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
