@@ -55,9 +55,9 @@ async def  on_message_edit(before,after):
 
 @client.event
 async def on_raw_reaction_add(payload):
-    ch_id = 718096349140353034#送信先チャンネル
-    channel = guild.get_channel(ch_id)
+    channel = guild.get_channel(718096349140353034)
     await channel.send('Debug!!!')
+#    ch_id = 718096349140353034#送信先チャンネル
 #    roles_id_ = 722630435707813888#変態役職
 #    msg_id = 722631419251130408#つけたいメッセージ
 #   if reaction.message.id == msg_id:
