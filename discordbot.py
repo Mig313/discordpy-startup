@@ -43,12 +43,12 @@ async def  on_message_edit(before,after):
     befmsg = before.content
     aftmsg = after.content
     sender = after.author.display_name
-    await after.channel.send('私知ってます！！{}さんは編集前、{}って言ってました！！'.format(sender,befmsg))
+    await after.channel.send('私知ってます！！{}さんは編集前、「{}」って言ってました！！'.format(sender,befmsg))
 
 @client.event
 async def on_raw_reaction_add(payload):
     channel_id = 718096349140353034
-    channel = guild.get_channel(channel_id)
+    channel = discord.Client.get_channel(channel_id)
     await channel.send('Debug!!!')
 
 # Botの起動とDiscordサーバーへの接続
