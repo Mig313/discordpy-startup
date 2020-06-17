@@ -54,16 +54,16 @@ async def  on_message_edit(before,after):
     await after.channel.send('私知ってます！！{}さんは編集前、{}って言ってました！！'.format(sender,befmsg))
 
 @client.event
-async def on_reaction_add(reaction,user):
-    channel_id = 718096349140353034#送信先チャンネル
-    roles_id = 722630435707813888#変態役職
-    msg_id = 722631419251130408#つけたいメッセージ
-    channel = discord.Guild.get_channel(channel_id)
+async def on_raw_reaction_add(payload):
+    ch_id = 718096349140353034#送信先チャンネル
+    channel = guild.get_channel(ch_id)
     await channel.send('Debug!!!')
-    if reaction.message.id == msg_id:
-        role = guild.get_role(roles_id)
-        await user.add_roles(role)
-        await channel.send('オォン?!')
+#    roles_id_ = 722630435707813888#変態役職
+#    msg_id = 722631419251130408#つけたいメッセージ
+#   if reaction.message.id == msg_id:
+#        role = guild.get_role(roles_id)
+#        await user.add_roles(role)
+#        await channel.send('オォン?!')
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
