@@ -58,7 +58,7 @@ async def on_reaction_add(reaction,user):
     channel_id = 718096349140353034#送信先チャンネル
     roles_id = 722630435707813888#変態役職
     msg_id = 722631419251130408#つけたいメッセージ
-    channel = client.get_channel(channel_id)
+    channel = guild.get_channel(channel_id)
     await channel.send('Debug!!!')
     if reaction.message.id == msg_id:
         role = guild.get_role(roles_id)
