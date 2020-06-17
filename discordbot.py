@@ -55,7 +55,8 @@ async def  on_message_edit(before,after):
 
 @client.event
 async def on_raw_reaction_add(payload):
-    channel = discord.Guild.get_channel(718096349140353034)
+    channel_id = 718096349140353034
+    channel = discord.Guild.get_channel(channel_id)
     await channel.send('Debug!!!')
 #    ch_id = 718096349140353034#送信先チャンネル
 #    roles_id_ = 722630435707813888#変態役職
