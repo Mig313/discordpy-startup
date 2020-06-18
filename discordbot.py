@@ -34,6 +34,12 @@ async def on_message(message):
      
     if message.content == '/help':
         await message.channel.send('やぁ！私はお兄ちゃん達をサポートするcuteな女の子だよ！\n私はお兄ちゃんのこと、いつも見てるから発言には気をつけてね！\n編集や削除で無効化しても無駄だよ♡\nじゃぁ、お仕事頑張ってね！！')
+
+    if message.content.startswith == "/id":
+        msg_list = message.content.split()
+        emoji = msg_list[1]
+        await message.channel.send(emoji.id)
+        await message.channel.send('おったまげー！')
     
 @client.event
 async def on_message_delete(message):
