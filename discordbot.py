@@ -18,6 +18,9 @@ async def on_ready():
 # 発言時に実行されるイベントハンドラを定義
 @client.event
 async def on_message(message):
+    if message.author.bot == True:
+        return
+
     if message.content == '/debug':
         await message.channel.send('---デバッグデータ---')
 
@@ -35,13 +38,15 @@ async def on_message(message):
 @client.event
 async def on_message_delete(message):
     msg = message.content
-    if message.author.bot == true :
+    if message.author.bot == True :
         return
     sender = message.author.display_name
     await message.channel.send('私知ってます！！{}さんが「{}」って言ってました！！'.format(sender,msg))
 
 @client.event
 async def on_message_edit(before,after):
+    if before.author.bot == True:
+        return
     befmsg = before.content
     aftmsg = after.content
     sender = after.author.display_name
