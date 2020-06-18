@@ -34,12 +34,6 @@ async def on_message(message):
      
     if message.content == '/help':
         await message.channel.send('やぁ！私はお兄ちゃん達をサポートするcuteな女の子だよ！\n私はお兄ちゃんのこと、いつも見てるから発言には気をつけてね！\n編集や削除で無効化しても無駄だよ♡\nじゃぁ、お仕事頑張ってね！！')
-
-    if message.content.startswith == "/id":
-        msg_list = message.content.split()
-        emoji = msg_list[1]
-        await message.channel.send(emoji.id)
-        await message.channel.send('おったまげー！')
     
 @client.event
 async def on_message_delete(message):
@@ -60,9 +54,9 @@ async def on_message_edit(before,after):
 
 @client.event
 async def on_raw_reaction_add(payload):
+    guild = client.get_guild(692774588995731530)
+    channel = guild.get_channel(718096349140353034)
     if payload.message_id == 723050973865574481 :#and payload.emoji == "🔞":
-        guild = client.get_guild(692774588995731530)
-        channel = guild.get_channel(718096349140353034)
         role = guild.get_role(722630435707813888)
         user = guild.get_member(payload.user_id)
         if role in user.roles:
@@ -70,6 +64,9 @@ async def on_raw_reaction_add(payload):
         else:
             await user.add_roles(role)
             await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
+    else:
+        await channel.send("debug")
+        await channel.send(payload.id)
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
