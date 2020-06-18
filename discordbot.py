@@ -54,17 +54,16 @@ async def on_message_edit(before,after):
 
 @client.event
 async def on_raw_reaction_add(payload):
-    if not payload.message_id == 723050973865574481 and payload.emoji.name == "underage":
-        return
-    guild = client.get_guild(692774588995731530)
-    channel = guild.get_channel(718096349140353034)
-    role = guild.get_role(722630435707813888)
-    user = guild.get_member(payload.user_id)
-    if role in user.roles:
-        await channel.send('おまわりさん！！{}は変態願望の塊です！！'.format(user.display_name))
-    else:
-        await user.add_roles(role)
-        await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
+    if payload.message_id == 723050973865574481 and payload.emoji.name == "underage":
+        guild = client.get_guild(692774588995731530)
+        channel = guild.get_channel(718096349140353034)
+        role = guild.get_role(722630435707813888)
+        user = guild.get_member(payload.user_id)
+        if role in user.roles:
+            await channel.send('おまわりさん！！{}は変態願望の塊です！！'.format(user.display_name))
+        else:
+            await user.add_roles(role)
+            await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
