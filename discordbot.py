@@ -68,11 +68,22 @@ async def on_raw_reaction_add(payload):
         role_1 = guild.get_role(724556632637440026)
         user = guild.get_member(payload.user_id)
         if role_1 in user.roles:
-            await channel.send('{}さんに@every1を付与しました'.format(user.display_name))
+            await channel.send('{}さんに@every1を付与しました。'.format(user.display_name))
             await user.add_roles(role_1)
 #    else:
 #        await channel.send("例外処理なのだー！")
 #        await channel.send(str(payload.emoji.name))
+@client.event
+async def on_raw_reaction_remove(payload):
+    guild = client.get_guild(692774588995731530)
+    channel = guild.get_channel(718096349140353034)
+    if payload.message_id == 723050973865574481 and payload.emoji.name == "Ⓜ️":
+        role_1 = guild.get_role(724556632637440026)
+        user = guild.get_member(payload.user_id)
+        if role_1 in user.roles:
+            await channel.send('{}さんから@every1を剥奪しました。'.format(user.display_name))
+            await user.remove_roles(role_1)
+
 
 
 # Botの起動とDiscordサーバーへの接続
