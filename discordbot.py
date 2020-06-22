@@ -56,7 +56,7 @@ async def on_message_edit(before,after):
 async def on_raw_reaction_add(payload):
     guild = client.get_guild(692774588995731530)
     channel = guild.get_channel(718096349140353034)
-    if payload.message_id == 723050973865574481 and payload.emoji.name == ":underage:":
+    if payload.message_id == 723050973865574481 and payload.emoji.name == "underage":
         role = guild.get_role(722630435707813888)
         user = guild.get_member(payload.user_id)
         if role in user.roles:
