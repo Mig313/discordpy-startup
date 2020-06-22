@@ -66,7 +66,7 @@ async def on_raw_reaction_add(payload):
             await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
     else:
         await channel.send("debug")
-        await channel.send(str(payload.emoji.id))
+        await channel.send(payload.emoji.id)
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
