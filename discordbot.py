@@ -65,8 +65,8 @@ async def on_raw_reaction_add(payload):
             await user.add_roles(role)
             await channel.send('おまわりさん！！{}は変態です！！'.format(user.display_name))
     else:
-        await channel.send("debug")
-        await channel.send("{}".format(payload.emoji.id))
+        await channel.send("例外処理なのだー！")
+        await channel.send(str(payload.emoji.name))
 
 # Botの起動とDiscordサーバーへの接続
 client.run(TOKEN)
